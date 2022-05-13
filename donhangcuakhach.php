@@ -132,7 +132,7 @@
                             <th scope="row"><?= $rows['id'] ?></th>
                             <td><?= $rows['ngay_mua'] ?></td>
                             <td><?= $rows['phi_ship'] ?></td>
-                            <td><?= $rows['tong_tien'] ?></td>
+                            <td><?= $rows['tong_tien'] + $rows['phi_ship'] ?></td>
                             <td><?= $rows['nguoi_giao'] ?></td>
                             <td><a href="./chitiethoadon.php?orderdetail=<?= $rows['id'] ?>">Xem</a></td>
                             <?php if ($rows['trang_thai'] == 0) { ?>

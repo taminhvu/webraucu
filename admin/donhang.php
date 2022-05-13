@@ -33,22 +33,22 @@ include '../connect_db.php';
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
+            <li class="nav-item" style="min-width:102px">
               <a class="nav-link active" aria-current="page" href="../index.php">Trang chủ</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" style="min-width:102px">
               <a class="nav-link" href="../admin.php" onclick="listsanpham();">Sản Phẩm</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" style="min-width:102px">
               <a class="nav-link" href="./danhmuc.php">Danh Mục</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" style="min-width:102px">
               <a class="nav-link" href="./donhang.php" onclick="listdonhang()" ;>Đơn Hàng</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" style="min-width:102px">
               <a class="nav-link" href="./quanlyuser.php" onclick="listkhachhang();">Khách Hàng</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" style="min-width:102px">
               <a class="nav-link" href="./thongke.php">Thống Kê</a>
             </li>
           </ul>
@@ -101,7 +101,7 @@ include '../connect_db.php';
             <td><?php echo $row['id']; ?></td>
             <td><?php echo $row['ngay_mua']; ?></td>
             <td><?php echo $row['phi_ship']; ?></td>
-            <td><?php echo $row['tong_tien']; ?>đ</td>
+            <td><?php echo $row['tong_tien'] + $row['phi_ship']; ?>đ</td>
             <td><?php echo $row['nguoi_giao']; ?></td>
             <?php $status = $row['trang_thai'];
             if ($status == 0) {

@@ -25,7 +25,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.php">Trang chủ</a>
+              <a class="nav-link" aria-current="page" href="index.php">Trang chủ</a>
             </li>
             <?php
             include 'connect_db.php';
@@ -255,6 +255,18 @@
   </footer>
   <script type="text/javascript" src="js/bootstrap.js"></script>
   <script type="text/javascript" src="js/Main.js"></script>
+  <script>
+$(document).ready(function() {
+    $( ".navbar-nav .nav-item" ).bind( "click", function(event) {
+        event.preventDefault();
+        var clickedItem = $( this );
+        $( ".mr-auto .nav-item nav-link" ).each( function() {
+            $( this ).removeClass( "active" );
+        });
+        clickedItem.addClass( "active" );
+    });
+});
+</script>
 </body>
 
 </html>

@@ -169,7 +169,7 @@ ob_start();
           <h2>Thông tin đặt hàng của bạn</h2>
           <div class="col-12">
             <label for="TenTK" class="form-label">Họ Và Tên</label>
-            <input type="text" class="form-control"name="username" id="TenTK" value="<?= ($result['ten_khach'] =="") ? $result['ten_khach'] : "dkldsdl" ?>" disabled>
+            <input type="text" class="form-control"name="username" id="TenTK" value="<?= ($result['ten_khach'] != "") ? $result['ten_khach'] : "dkldsdl" ?>" disabled>
           </div>
           <div class="col-md-6">
             <label for="inputEmail4" class="form-label">Email</label>

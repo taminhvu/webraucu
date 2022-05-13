@@ -56,7 +56,7 @@
                 ?>
             </ul>
             <hr />
-            <label>Tổng SL : </label><?= $totalQuantity ?> - <label>Tổng tiền : </label><?= number_format($totalMoney, 0, ",", ".") ?>đ
+            <label>Tổng SL : </label><?= $totalQuantity ?> - <label>Đơn Giá : </label><?= number_format($totalMoney, 0, ",", ".") ?>đ
             <p><label>Người giao hàng : </label><?= $user['nguoi_giao'] ?></p>
         </div>
     </div>

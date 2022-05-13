@@ -101,16 +101,15 @@
     <!-- End header -->
     <?php
     if (isset($_POST['sbm'])) {
-        if (empty($_POST['username']) || empty($_POST['email']) || empty($_POST['password']) || empty($_POST['confirm-password']) || empty($_POST['ten_khach'])  || empty($_POST['sdt'])) {
+        if (empty($_POST['email']) || empty($_POST['password']) || empty($_POST['confirm-password']) || empty($_POST['ten_khach'])  || empty($_POST['sdt'])) {
             echo "Xin điền đầy đủ thông tin";
         } else {
             if ($_POST['password'] == $_POST['confirm-password']) {
-                $usernamerg = $_POST['username'];
                 $email = $_POST['email'];
                 $passwordrg = $_POST['password'];
                 $ten_khach = $_POST['ten_khach'];
                 $sdt  = $_POST['sdt'];
-                $query = mysqli_query($con, "UPDATE `tai_khoan` SET `ten_tai_khoan` = '" . $usernamerg . "',`email` = '". $email ."', `mat_khau` = '" . $passwordrg . "', `ten_khach` = '" . $ten_khach . "', `sdt` = '" . $sdt . "' WHERE `tai_khoan`.`id` = $iduser");
+                $query = mysqli_query($con, "UPDATE `tai_khoan` SET `email` = '". $email ."', `mat_khau` = '" . $passwordrg . "', `ten_khach` = '" . $ten_khach . "', `sdt` = '" . $sdt . "' WHERE `tai_khoan`.`id` = $iduser");
                 if ($query) {
                     echo "<script type='text/javascript'>alert('Bạn đã thay đổi thông tin tài khoản thành công');</script>";
                 } else {
@@ -130,7 +129,7 @@
     <!-- UPDATE `tai_khoan` SET `ten_tai_khoan` = 'truong', `mat_khau` = '1234', `ten_khach` = 'Trường 09', `sdt` = '090920610', `dia_chi` = 'Quận Cam cali' WHERE `tai_khoan`.`id` = 3; -->
     <!-- Hien don hang khach hang  -->
     <div class="container">
-        <form action="" method="POST" enctype="multipart/form-data" class="row mx-5 g-3" >
+        <form action="" method="POST" enctype="multipart/form-data" class="row mx-5 g-3" onsubmit="return confirm('Bạn chắc chắn muốn thay đổi thông tin');" >
            
                 <div class="card-header">
                     <h2>Thông Tin Tài Khoản</h2>
@@ -141,7 +140,7 @@
               </div> -->
                 <div class="col-6">
                     <label class="form-label" for="">Tên tài khoản</label>
-                    <input type="text" name="username" id="username"  class="form-control" placeholder="Tên tài khoản" value="<?= $result['ten_tai_khoan'] ?>" required>
+                    <input type="text" name="username" id="username"  class="form-control" placeholder="Tên tài khoản" value="<?= $result['ten_tai_khoan'] ?>" disabled>
                 </div>
                 <div class="col-6">
                     <label class="form-label" for="">Email</label>
@@ -149,7 +148,7 @@
                 </div>
                 <div class="col-6">
                     <label class="form-label" for="">Họ và tên</label>
-                    <input type="text" name="ten_khach" id="ten_khach"  class="form-control" placeholder="Họ tên của bạn" value="<?= $result['ten_khach'] ?>" required>
+                    <input type="text" name="ten_khach" id="ten_khach"  class="form-control" placeholder="Họ và tên" value="<?= $result['ten_khach'] ?>" required>
                 </div>
                 <div class="col-6">
                     <label class="form-label" for="">Số điện thoại</label>

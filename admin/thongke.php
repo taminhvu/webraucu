@@ -14,7 +14,8 @@ include '../hienidnguoidung.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rau Củ 24H Admin</title>
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../css/bootstrap.css"> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../font-awesome/css/all.css">
     <link rel="stylesheet" href="../css/admin.css">
 
@@ -33,32 +34,28 @@ include '../connect_db.php';
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
+                        <li class="nav-item" style="min-width:102px">
                             <a class="nav-link active" aria-current="page" href="../index.php">Trang chủ</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item" style="min-width:102px">
                             <a class="nav-link" href="../admin.php" onclick="listsanpham();">Sản Phẩm</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item" style="min-width:102px">
                             <a class="nav-link" href="./danhmuc.php">Danh Mục</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item" style="min-width:102px">
                             <a class="nav-link" href="./donhang.php" onclick="listdonhang()" ;>Đơn Hàng</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item" style="min-width:102px">
                             <a class="nav-link" href="./quanlyuser.php" onclick="listkhachhang();">Khách Hàng</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item" style="min-width:102px">
                             <a class="nav-link" href="./thongke.php">Thống Kê</a>
                         </li>
                     </ul>
-                    <form class="d-flex" method="GET">
-                        <input class="form-control me-2" name="text" type="Search" placeholder="Tìm kiếm" aria-label="Search" value="<?= isset($_GET['text']) ? $_GET['text'] : ""; ?>">
-                        <button class="btn btn-outline-light" type="submit">Tìm</button>
-                    </form>
                     <ul class="navbar-nav px-3">
                         <li class="nav-item text-nowrap">
-                            <a class="nav-link" href="">Xin Chào Quản Trị Viên</a>
+                            <a class="nav-link" href="">Quản Trị Viên</a>
                         </li>
                         <li class="nav-item text-nowrap">
                             <!-- Nếu chưa đăng nhập thì hiển thị nút Đăng nhập -->

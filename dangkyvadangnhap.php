@@ -111,7 +111,7 @@
 									<?php
 									if (isset($_GET['action']) && $_GET['action'] == "register" && isset($_POST['register-submit'])) {
 										if (empty($_POST['username']) || empty($_POST['email']) || empty($_POST['sdt']) || empty($_POST['password']) || empty($_POST['confirm-password'])) {
-											echo "Xin điền đầy đủ thông tin";
+											echo "<script type='text/javascript'>alert('Vui lòng nhập đầy đủ thông tin');</script>";
 										} else {
 											if ($_POST['password'] == $_POST['confirm-password']) {
 												$usernamerg = $_POST['username'];
@@ -121,7 +121,7 @@
 
 												$query = mysqli_query($con, "SELECT ten_tai_khoan FROM tai_khoan WHERE ten_tai_khoan = '$usernamerg'");
 												if (mysqli_num_rows($query) > 0) {
-													echo "Tên đăng nhập đã có người sử dụng";
+													echo "<script type='text/javascript'>alert('Tên đăng nhập đã có người sử dụng !');</script>";
 												} else {
 													$queryrg = mysqli_query($con, "INSERT INTO tai_khoan VALUES ('NULL','$usernamerg','$email','$passwordrg', 'NULL', '$sdt', 'NULL', 'NULL')");
 													if (!$queryrg) {
@@ -132,7 +132,7 @@
 													}
 												}
 											} else {
-												echo "Password không trùng nhau";
+												echo "<script type='text/javascript'>alert('password không trùng nhau !');</script>";
 											}
 										}
 									}
