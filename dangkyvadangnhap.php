@@ -123,7 +123,7 @@
 												if (mysqli_num_rows($query) > 0) {
 													echo "<script type='text/javascript'>alert('Tên đăng nhập đã có người sử dụng !');</script>";
 												} else {
-													$queryrg = mysqli_query($con, "INSERT INTO tai_khoan VALUES ('NULL','$usernamerg','$email','$passwordrg', 'NULL', '$sdt', 'NULL', 'NULL')");
+													$queryrg = mysqli_query($con, "INSERT INTO tai_khoan VALUES ('NULL','$usernamerg','$email','$passwordrg', '$usernamerg', '$sdt', 'NULL', 'NULL')");
 													if (!$queryrg) {
 														echo 'Tạo không thành công!!!';
 													} else {
